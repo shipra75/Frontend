@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import useLocalStorage from "./useLocalStorage"
 
 function App() {
+  const [count,setCount] = useLocalStorage("count", 0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div  style={{ display:"grid", placeItems:"center"}}>
+      <h1 style ={{color:"green"}}> GeeksForGeeks</h1>
+      <h2>useLocalstorage</h2>
+      <h4>count-{count}</h4>
+     <button onClick={()=> setCount((prevcount)=>prevcount+1)}> Increment</button>
+
     </div>
   );
 }
